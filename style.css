@@ -1,0 +1,90 @@
+/* ========================
+   General Reset & Body
+========================= */
+* { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+body { background:#fff; color:#333; }
+
+/* ========================
+   Navbar Styles
+========================= */
+header { width:100%; }
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+  background: linear-gradient(90deg, #007bff, #ff007f);
+  color:#fff;
+}
+.logo { font-size:1.5rem; font-weight:bold; }
+.nav-links { list-style:none; display:flex; gap:2rem; }
+.nav-links a { text-decoration:none; color:#fff; font-weight:bold; }
+.nav-links a:hover { color:#000; }
+.hamburger { display:none; cursor:pointer; font-size:1.5rem; }
+
+/* ========================
+   Full Section Layout
+========================= */
+.full-section { min-height:100vh; display:flex; justify-content:center; align-items:center; text-align:center; padding:2rem; }
+.hero-content h1 { font-size:3rem; margin-bottom:1rem; color:#007bff; }
+.hero-content p { font-size:1.2rem; margin-bottom:2rem; color:#ff007f; }
+
+/* ========================
+   Home Buttons
+========================= */
+.home-buttons button {
+  margin:0.5rem; padding:0.8rem 1.2rem; border:none; border-radius:5px;
+  cursor:pointer; font-weight:bold; transition:0.3s;
+}
+.home-buttons button:nth-child(odd) { background:#007bff; color:#fff; }
+.home-buttons button:nth-child(even) { background:#ff007f; color:#fff; }
+.home-buttons button:hover { opacity:0.8; }
+
+/* ========================
+   Sections & Cards
+========================= */
+.content-section { display:none; flex-direction:column; }
+.content-section.active { display:flex; animation: fadeIn 0.5s ease-in; }
+.section-container { max-width:800px; width:100%; margin:auto; }
+
+.card-container {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:1.5rem;
+  margin-top:2rem;
+}
+
+.card {
+  background:#fff; border:2px solid #007bff; border-radius:10px;
+  padding:1.5rem; text-align:center; box-shadow:0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card h3 { color:#007bff; margin-bottom:0.8rem; }
+.card p { color:#333; margin-bottom:1.2rem; }
+.card button {
+  padding:0.6rem 1.2rem; border:none; border-radius:5px;
+  background:#ff007f; color:#fff; cursor:pointer; font-weight:bold; transition:0.3s;
+}
+.card button:hover { opacity:0.8; transform:scale(1.05); }
+
+/* ========================
+   Footer
+========================= */
+footer { background:#007bff; color:#fff; text-align:center; padding:1rem; }
+
+/* ========================
+   Animations
+========================= */
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+/* ========================
+   Responsive Styles
+========================= */
+@media(max-width:768px) {
+  .nav-links { display:none; flex-direction:column; gap:1rem; position:absolute; top:60px; right:0; background:linear-gradient(90deg,#007bff,#ff007f); width:200px; padding:1rem; }
+  .nav-links.active { display:flex; }
+  .hamburger { display:block; }
+  .card-container { grid-template-columns:1fr; }
+}
+
