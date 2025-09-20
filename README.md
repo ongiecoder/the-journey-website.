@@ -27,11 +27,9 @@ It complements *The Journey App* and provides guidance, academic support, emerge
 ## Folder Structure
 
 /project-root
-├── index.html
-├── css/
-│ └── styles.css
-├── js/
-│ └── main.js
-├── images/
-│ └── [all images]
-└── README.md
+index.html
+css/
+styles.css
+js/
+main.js
+README.md
